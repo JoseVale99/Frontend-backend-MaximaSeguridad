@@ -1,0 +1,130 @@
+
+.color{
+    background-color: #e0e0e0f1;  /* fallback for old browsers */   
+}
+.bg-color{
+    background: #1e3c72;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2a5298, #1e3c72); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.card-color{
+    background-color: #fff;
+    color: white;
+}
+.text-black{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+}
+.text-black2{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.text-blank{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.table-hover:hover{
+    background-color: rgb(214, 223, 230);
+    color: black;
+}
+.bold-title{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+.text-footer{
+    color: black;
+    font-size: 14px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
+}
+.alert-save{
+    background-color: #2962cc;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.alert-delete{
+    background-color: #be1212;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.text-upper{
+    text-transform:uppercase;
+}
+.message-error{
+    color: rgb(192, 18, 18);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+}
+.message-error404{
+    color: rgb(187, 39, 39);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+}
+.login-img{
+    background: url("https://i.ibb.co/bB19mT8/wallpaperbetter-com-1280x800.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+.border-login{
+    border-radius: 25px;
+    background-color: rgb(236, 241, 245);
+}
+.footer-bg{
+    background-color:#ffffffce;
+    color: white;
+}
+.bg-nav{
+    background: #ffffff;  /* fallback for old browsers */
+   
+    color: black;    
+}
+.border-image{
+    border-radius: 35px;
+}
+.price{
+    color: #355da7;
+    font-size: 20;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
+}
+.description{
+    color:#000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+.stock{
+    color: rgb(45, 97, 194);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+.stock-danger{
+    color: rgb(163, 10, 10);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+.card-title{
+    color: #4e4747e7;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+.text-dark1{
+    color: #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.bg-fondo{
+    background-color: #1e3c72;
+    color: rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
