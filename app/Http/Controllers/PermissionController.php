@@ -25,10 +25,11 @@ class PermissionController extends Controller
 
         $buscar = $request->get('buscarpor');
         $tipo = $request->get('type');
-        if($tipo == 'FECHA'){
-            $tipo = 'created_at';
-        }else{
+        if($tipo == 'NOMBRE'){
             $tipo = 'name';
+        }else{
+            $tipo = 'created_at';
+            
         }
 
         $variablesurl = $request->all();

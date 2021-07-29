@@ -80,7 +80,7 @@ class CreateCitasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_cliente')->nullable();
             $table->String('nombre');
-            $table->String('total_venta');
+            $table->integer('total_venta');
             $table->text('productos');
             $table->string('direccion');
             $table->String('telefono');
