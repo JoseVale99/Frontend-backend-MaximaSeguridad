@@ -27,6 +27,8 @@ class PermissionController extends Controller
         $tipo = $request->get('type');
         if($tipo == 'FECHA'){
             $tipo = 'created_at';
+        }else{
+            $tipo = 'name';
         }
 
         $variablesurl = $request->all();
@@ -105,7 +107,7 @@ class PermissionController extends Controller
     {
         $request->validate(
             [
-                'nombre' => 'required|regex:/^[\pL\s\-.]+$/u', // regex solo letras
+                'name' => 'required|regex:/^[\pL\s\-.]+$/u', // regex solo letras
             ]
         );
         $permission->fill($request->all());

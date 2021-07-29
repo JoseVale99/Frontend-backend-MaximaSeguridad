@@ -98,7 +98,7 @@
                                                     
                                                     
                                                     <td class="text-center">{{ $permission->id }}</td>
-                                                    <td class="text-center">{{ $permission->nombre }}</td>
+                                                    <td class="text-center">{{ $permission->name }}</td>
                                                     
                                                     <td class="text-center">{{ $permission->guard_name }}</td>
                                                     <td class="text-center">{{ $permission->created_at }}</td>

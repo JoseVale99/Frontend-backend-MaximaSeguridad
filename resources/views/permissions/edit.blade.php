@@ -38,12 +38,12 @@
                                 <div class="col-md-12 mt-auto ">
                                         <div class="form-group">
                                             <label class="text-black h4">Nombre del producto</label>
-                                            <input type="text" name="nombre"
-                                                value="{{ old('nombre', $permission->nombre) }}"
+                                            <input type="text" name="name"
+                                                value="{{ old('name', $permission->nombre) }}"
                                                 placeholder="Introduce el nombre del permiso"
-                                                class="form-control text-upper" name="nombre">
+                                                class="form-control text-upper">
                                             {{-- validaciones --}}
-                                            @error('nombre')
+                                            @error('name')
                                                 <div class="message-error">*{{ $message }}</div>
                                             @enderror
 
