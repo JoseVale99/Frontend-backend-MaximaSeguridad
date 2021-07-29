@@ -33,7 +33,8 @@ class PermissionController extends Controller
         }
 
         $variablesurl = $request->all();
-        $permissions = Permission::buscar($tipo, $buscar)->paginate(5)->appends($variablesurl);
+        // $permissions = Permission::buscar($tipo, $buscar)->paginate(5)->appends($variablesurl);
+        $permissions = Permission::paginate(5)->appends($variablesurl);
 
         return view('permissions.index', compact('permissions'));
     }
