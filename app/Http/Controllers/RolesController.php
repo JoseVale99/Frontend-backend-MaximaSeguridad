@@ -24,6 +24,8 @@ class RolesController extends Controller
         $tipo = $request->get('type');
         if($tipo == 'FECHA'){
             $tipo = 'created_at';
+        }else{
+            $tipo = 'name';
         }
 
         $variablesurl = $request->all();
@@ -56,7 +58,7 @@ class RolesController extends Controller
 
         $request->validate(
             [
-                'nombre' => 'required|unique:roles|regex:/^[\pL\s\-0-9]+$/u', // regex solo letras
+                'name' => 'required|unique:roles|regex:/^[\pL\s\-0-9]+$/u', // regex solo letras
             ]
         );
         $role->fill($request->all());
@@ -106,7 +108,7 @@ class RolesController extends Controller
        
         $request->validate(
             [
-                'nombre' => 'required|regex:/^[\pL\s\-0-9]+$/u', // regex solo letras
+                'name' => 'required|regex:/^[\pL\s\-0-9]+$/u', // regex solo letras
             ]
         );
         $role->update($request->all());

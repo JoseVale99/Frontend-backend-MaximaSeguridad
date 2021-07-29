@@ -114,7 +114,7 @@
                                                         <a class="text-center"
                                                             href="{{ route('role.show', [$rol]) }}">
 
-                                                            {{ $rol->nombre }}</td>
+                                                            {{ $rol->name }}</td>
                                                         </a>
                                                     </td>
                                                     <td class="text-center">{{ $rol->created_at }}</td>

@@ -43,7 +43,7 @@
                                         </div>
                                           <div class="col mx-3">
                                             <div class="card-body">
-                                              <h5 class="card-title text-upper text-white">{{ $role->nombre }}</h5>
+                                              <h5 class="card-title text-upper text-white">{{ $role->name }}</h5>
                                               <p class="card-text ">Fecha de creación:</p>
                                               <p class="card-text">{{$role->created_at}}</p>
                                             </div>

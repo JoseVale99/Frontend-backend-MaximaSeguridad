@@ -39,9 +39,9 @@
                                
                                 <div class="col-md-4 mt-auto ">
                                         <div class="form-group">
-                                            <label class="text-black h4">Nombre del rol</label>
+                                            <label class="text-black h4">Nombre del usuario:</label>
                                             <input type="text" name="name"
-                                                value="{{ old('nombre', $user->name) }}"
+                                                value="{{ old('name', $user->name) }}"
                                                 placeholder="Introduce el nombre del rol"
                                                 class="form-control text-upper">
                                             {{-- validaciones --}}
@@ -66,7 +66,7 @@
                                                 'roles[]',
                                                    $role->id, null,
                                                    ['class'=>'mr-1']) !!} 
-                                                   {{$role->nombre}}
+                                                   {{$role->name}}
                                         </label>
                                     </div>
                                 @endforeach
