@@ -16,13 +16,12 @@ class ReporteController extends Controller
         $dias = ['Lunes','Martes', 'Miercoles','Jueves',
                     'Viernes','Sabado','Domingo'];
         // foreach ($year as $key => $value) {
-        $total_mes = DB::table('pedidos')
-        ->select(
-            DB::raw('sum(total_venta) as total'),
-            DB::raw('date_trunc("month",pedidos.fecha) as mes'))
-        
-        ->groupBy('mes')
-        ->get();
+        $total_mes = Pedido::select(
+            DB::raw('sum(total_venta) as sums'),
+            DB::raw("DATE_FORMAT(pedidos.fecha,'%M %Y') as months")
+        )
+            ->groupBy('months')
+            ->get();
 
         $total_anio = DB::table('pedidos')
         ->select(
