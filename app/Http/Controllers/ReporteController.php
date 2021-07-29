@@ -19,7 +19,7 @@ class ReporteController extends Controller
         $total_mes = DB::table('pedidos')
         ->select(
             DB::raw('sum(total_venta) as total'),
-            DB::raw('MONTHNAME(pedidos.fecha) as mes'))
+            DB::raw('TO_CHAR(current_timestamp,pedidos.fecha) as mes'))
         
         ->groupBy('mes')
         ->get();
