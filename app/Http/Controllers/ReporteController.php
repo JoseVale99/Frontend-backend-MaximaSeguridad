@@ -17,14 +17,10 @@ class ReporteController extends Controller
                     'Viernes','Sabado','Domingo'];
         // foreach ($year as $key => $value) {
         $total_mes = Pedido::select(
-            DB::raw('sum(total_venta) as sums'),
-<<<<<<< HEAD
-            DB::raw("DATE_FORMAT(pedidos.fecha,'Mon-dd-YYYY') as months")
-=======
-            DB::raw("DATE_FORMAT(pedidos.fecha,'%M %Y') as months")
->>>>>>> facef6f35af69aa0476c6343d0f1c71128f1a7f9
+            DB::raw('sum(total_venta) as total'),
+            // DB::raw("(pedidos.fecha,'%M %Y') as months")
         )
-            ->groupBy('months')
+            // ->groupBy('months')
             ->get();
 
         $total_anio = DB::table('pedidos')
