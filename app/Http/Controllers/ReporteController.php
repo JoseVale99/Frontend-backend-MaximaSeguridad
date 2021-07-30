@@ -26,9 +26,10 @@ class ReporteController extends Controller
         $total_anio = DB::table('pedidos')
         ->select(
             DB::raw('sum(total_venta) as total'),
-            DB::raw('YEAR(pedidos.fecha) as mes'))
+            // DB::raw('YEAR(pedidos.fecha) as mes')
+            )
         
-        ->groupBy('mes')
+        // ->groupBy('mes')
         ->get();
 
             $array=DB::table('pedidos')
