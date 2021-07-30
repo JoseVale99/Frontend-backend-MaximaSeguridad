@@ -82,7 +82,7 @@ class ReporteController extends Controller
             $reportes =  DB::table('pedidos')
             ->select(
                 DB::raw('sum(total_venta) as total'),
-                DB::raw("DATE_FORMAT(fecha,'%d - %b - %Y') as fecha")
+                DB::raw("to_char(fecha,'yyyy-mm-dd') as fecha")
             )
             ->groupBy('fecha')
             ->get();
