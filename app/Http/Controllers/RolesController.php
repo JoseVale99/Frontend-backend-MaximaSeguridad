@@ -29,7 +29,8 @@ class RolesController extends Controller
         }
 
         $variablesurl = $request->all();
-        $roles = Role::buscar($tipo, $buscar)->paginate(5)->appends($variablesurl);
+        // $roles = Role::buscar($tipo, $buscar)->paginate(5)->appends($variablesurl);
+        $roles = Role::paginate(5)->appends($variablesurl);
 
         return view('roles.index', compact('roles'));
     }
