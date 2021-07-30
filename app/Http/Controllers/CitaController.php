@@ -15,21 +15,6 @@ class CitaController extends Controller
     {
         $buscar = $request->get('buscar');
         $tipo = $request->get('tipos');
-        if($tipo == 'NOMBRE'){
-            $tipo = "nombre";
-        }
-        elseif($tipo == 'DESCRIPCION'){
-            $tipo = "descripcion";
-        }
-        elseif($tipo=='ENTIDAD'){
-            $tipo = "entidad";
-        }
-        elseif($tipo=='REFERENCIAS'){
-            $tipo = "referencias";
-        }
-        else{
-            $tipo = "fecha"; 
-        }
         $variablesurl = $request->all();
         $citas = Cita::buscar($tipo, $buscar)->paginate(5)->appends($variablesurl);
         return view('Cita.index', compact('citas'));

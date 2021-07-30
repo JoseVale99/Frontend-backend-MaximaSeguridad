@@ -52,7 +52,7 @@
                                     <div class="col-md-4 mt-4">
                                         <div class="form-group required">
                                             <label class="text-black h4">Nombre del titular</label>
-                                            <input class='form-control' size='4' placeholder="Nombre" type='text' name="nombre"  value="{{ old('nombre')}}">
+                                            <input class='form-control text-upper' size='4' placeholder="Nombre" type='text' name="nombre"  value="{{ old('nombre')}}">
                                             @error('nombre')
                                                     <div class="message-error">*{{ $message }}</div>
                                                 @enderror
