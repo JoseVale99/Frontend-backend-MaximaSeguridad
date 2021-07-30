@@ -34,13 +34,15 @@ class ReporteController extends Controller
         ->get();
 
             $array=DB::table('pedidos')
-            ->select(DB::raw('SUM(pedidos.total_venta) as total')
-            ->select(DB::raw('to_char(pedidos.fecha) as dias'))
-    )
-    // ->whereDay('fecha', '=', date('d'))
-     ->groupBy('dias')
-    ->get();
+            ->select(DB::raw('SUM(pedidos.total_venta) as total'),
+            DB::raw("(to_char(fecha, 'Day')) as dias")
+    // DB::raw('DAYNAME(pedidos.fecha) as dias')
     
+    )
+    
+  ->groupBy('dias')
+    ->get();
+    dd($array);
        
         $total = [];        
     foreach ($array as $key => $qs) {
