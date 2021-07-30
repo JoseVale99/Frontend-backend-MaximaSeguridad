@@ -17,26 +17,30 @@ class ReporteController extends Controller
                     'Viernes','Sabado','Domingo'];
         // foreach ($year as $key => $value) {
         $total_mes = Pedido::select(
-            DB::raw('sum(total_venta) as total'),
-            // DB::raw("(pedidos.fecha,'%M %Y') as months")
+            DB::raw('sum(total_venta) as total')
+            
         )
+        ->whereMonth('fecha', '=', date('m'))
             // ->groupBy('months')
             ->get();
 
         $total_anio = DB::table('pedidos')
         ->select(
-            DB::raw('sum(total_venta) as total'),
-            // DB::raw('YEAR(pedidos.fecha) as mes')
+            DB::raw('sum(total_venta) as total')
+          
             )
-        
+            ->whereYear('fecha', '=', date('Y'))
         // ->groupBy('mes')
         ->get();
 
             $array=DB::table('pedidos')
             ->select(DB::raw('SUM(pedidos.total_venta) as total'),
-    DB::raw('DAYNAME(pedidos.fecha) as dias'))
-    ->groupBy('dias')
+     DB::raw('to_char(timestamp pedidos.fecha,"Day") as dias')
+    )
+    // ->whereDay('fecha', '=', date('d'))
+     ->groupBy('dias')
     ->get();
+    
        
         $total = [];        
     foreach ($array as $key => $qs) {
