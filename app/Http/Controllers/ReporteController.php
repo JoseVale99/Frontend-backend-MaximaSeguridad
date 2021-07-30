@@ -39,33 +39,32 @@ class ReporteController extends Controller
     // DB::raw('DAYNAME(pedidos.fecha) as dias')
     
     )
-    
   ->groupBy('dias')
     ->get();
-    dd($array);
+    // dd($array);
        
         $total = [];        
     foreach ($array as $key => $qs) {
-        if ($qs->dias == "Monday"){
-            $total["Lunes"] =$qs->total; 
+        if ($qs->dias == "1"){
+            $total["Sabado"] =$qs->total; 
         }  
-        elseif ($qs->dias == "Tuesday"){
+        elseif ($qs->dias == "2"){
+            $total["Domingo"] =$qs->total; 
+        }
+        elseif ($qs->dias == "3"){
+            $total["Lunes"] =$qs->total; 
+        }
+        elseif ($qs->dias == "4"){
             $total["Martes"] =$qs->total; 
         }
-        elseif ($qs->dias == "Wednesday"){
+        elseif ($qs->dias == "5"){
             $total["Miercoles"] =$qs->total; 
         }
-        elseif ($qs->dias == "Thursday"){
+        elseif ($qs->dias == "6"){
             $total["Jueves"] =$qs->total; 
         }
-        elseif ($qs->dias == "Friday"){
-            $total["Viernes"] =$qs->total; 
-        }
-        elseif ($qs->dias == "Saturday"){
-            $total["Sabado"] =$qs->total; 
-        }
         else{
-            $total["Domingo"] =$qs->total;
+            $total["Viernes"] =$qs->total;
         }
                   
     }
