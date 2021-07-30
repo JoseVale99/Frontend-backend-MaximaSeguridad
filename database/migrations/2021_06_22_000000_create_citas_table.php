@@ -115,8 +115,8 @@ class CreateCitasTable extends Migration
             ->references('id')->on('users') 
             ->onDelete('cascade');
 
-            $table->rememberToken();
-            $table->timestamps();
+            // $table->rememberToken();
+            // $table->timestamps();
              $table->softDeletes();
 
 
