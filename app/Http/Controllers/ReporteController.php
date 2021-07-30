@@ -35,7 +35,7 @@ class ReporteController extends Controller
 
             $array=DB::table('pedidos')
             ->select(DB::raw('SUM(pedidos.total_venta) as total'),
-            DB::raw("( EXTRACT(DAY FROM pedidos.fecha) as dias")
+            DB::raw("EXTRACT(DAY FROM pedidos.fecha) as dias")
     // DB::raw('DAYNAME(pedidos.fecha) as dias')
     
     )
