@@ -134,7 +134,7 @@ class CarritoController extends Controller
 
                 $pedidos->id_cliente = auth()->user()->id;
                 $pedidos->nombre = $request->input('nombre');
-                $pedidos->total_venta =  (float) (Cart::getSubTotal() * .9);
+                $pedidos->total_venta =  (int) (Cart::getSubTotal() * .9);
 
 
 
