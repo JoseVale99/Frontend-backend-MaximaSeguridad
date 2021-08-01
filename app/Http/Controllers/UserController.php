@@ -4,10 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Session;
-use App\File;
-use Intervention\Image\Facades\Image;
-use Illuminate\Support\Str;
-use Spatie\Dropbox\Client;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Storage;
@@ -141,7 +137,7 @@ class UserController extends Controller
                     ["requested_visibility" => "public"]);
            
                 // Creamos un nuevo registro en la tabla files con los datos de la respuesta.
-                $user-> photo = $response['url'];
+                $user-> photo = str_replace('dl=0','raw=1', $response['url']);
               
             }
               $user->saveOrFail();
