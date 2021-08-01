@@ -8,6 +8,7 @@
         "php": "^7.3|^8.0",
         "barryvdh/laravel-dompdf": "^0.9.0",
         "darryldecode/cart": "^4.2",
+        "fakerphp/faker": "^1.9.1",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -16,9 +17,9 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
         "laravelcollective/html": "^6.2",
+        "spatie/flysystem-dropbox": "^1.0.0",
         "spatie/laravel-permission": "^4.2",
-        "stripe/stripe-php": "^7.87",
-        "fakerphp/faker": "^1.9.1"
+        "stripe/stripe-php": "^7.87"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

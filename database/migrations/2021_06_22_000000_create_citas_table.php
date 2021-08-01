@@ -134,7 +134,7 @@ class CreateCitasTable extends Migration
 
        
         Schema::dropIfExists('users');
-       
+        
         Schema::dropIfExists('product');
         Schema::dropIfExists('failed_jobs');
         Schema::dropIfExists('password_resets');

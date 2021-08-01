@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Session;
+use App\File;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Str;
+use Spatie\Dropbox\Client;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Storage;
@@ -20,7 +23,7 @@ class UserController extends Controller
     public function __construct(){
         $this->middleware('can:user.index')->only('index');
         $this->middleware('can:user.edit')->only('edit');
-        $this->middleware('can:user.update')->only('update');
+        $this->middleware('can:user.update')->only('update'); 
     }
 
     public function index(Request $request)
@@ -109,14 +112,39 @@ class UserController extends Controller
                 [
                     'photo' => 'required|image|max:2048'
                 ]);
-                $photo = $request->file('photo')->store('public/images');
-                // $images->move('images',$images);
-                // $url  = Storage::url($images);
-                $user-> photo = Storage::url($photo);
-           
                 
+             
+            // Creamos el enlace publico en dropbox utilizando la propiedad dropbox
+            // definida en el constructor de la clase y almacenamos la respuesta.
+            
+                
+                 $perfil_photo = $request->file('photo');
+                 $perfil_name = $request->file('photo')->getClientOriginalName();
+            
+              
+            //    Storage::disk('dropbox')->put("imagenes/perfil/$perfil_name",
+            //    $perfil_name
+            
+            // ); 
+            Storage::disk('dropbox')->putFileAs(
+                "imagenes/perfil", 
+                $request->file('photo'), 
+                $request->file('photo')->getClientOriginalName()
+            );
+               
+             $dropbox = Storage::disk('dropbox')->getDriver()->getAdapter()->getClient();
+               
+
+                // Creamos el enlace publico en dropbox utilizando la propiedad dropbox
+                // definida en el constructor de la clase y almacenamos la respuesta.
+                $response = $dropbox->createSharedLinkWithSettings("imagenes/perfil/$perfil_name",
+                    ["requested_visibility" => "public"]);
+           
+                // Creamos un nuevo registro en la tabla files con los datos de la respuesta.
+                $user-> photo = $response['url'];
+              
             }
-            $user->saveOrFail();
+              $user->saveOrFail();
             return redirect()->route("user.profile");
         }
 
