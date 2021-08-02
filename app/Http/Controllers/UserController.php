@@ -123,7 +123,7 @@ class UserController extends Controller
             
             // ); 
             Storage::disk('dropbox')->putFileAs(
-                "imagenes/perfil", 
+                "perfil", 
                 $request->file('photo'), 
                 $request->file('photo')->getClientOriginalName()
             );
@@ -133,12 +133,17 @@ class UserController extends Controller
 
                 // Creamos el enlace publico en dropbox utilizando la propiedad dropbox
                 // definida en el constructor de la clase y almacenamos la respuesta.
-                $response = $dropbox->createSharedLinkWithSettings("imagenes/perfil/$perfil_name",
-                    ["requested_visibility" => "public"]);
+                
+                $url = Storage::disk('dropbox')->url("perfil/$perfil_name");
+                
+                
+                // $response = $dropbox->createSharedLinkWithSettings("perfil/$perfil_name",
+                //     ["requested_visibility" => "public"]);
            
                 // Creamos un nuevo registro en la tabla files con los datos de la respuesta.
-                $user-> photo = str_replace('dl=0','raw=1', $response['url']);
-              
+                
+                //$user-> photo = str_replace('dl=0','raw=1', $response['url']);
+                $user-> photo = (string) $url;
             }
               $user->saveOrFail();
             return redirect()->route("user.profile");
