@@ -163,7 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Darryldecode\Cart\CartServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
-        App\Providers\DropboxServiceProvider::class,
+        CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -231,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Cloudinary' => CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::class,
     ],
 
 ];

@@ -23,7 +23,7 @@ class CreateCitasTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('username')->unique();
-            $table->longText('photo')->default('default.svg');
+            $table->longText('photo')->default('https://res.cloudinary.com/maximaseguridadapp/image/upload/v1628227835/perfil/default.svg');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
