@@ -46,25 +46,25 @@ class ReporteController extends Controller
         $total = [];        
     foreach ($array as $key => $qs) {
         if ($qs->dias == "1"){
-            $total["Sabado"] =$qs->total; 
+            $total["Domingo"] =$qs->total; 
         }  
         elseif ($qs->dias == "2"){
-            $total["Domingo"] =$qs->total; 
-        }
-        elseif ($qs->dias == "3"){
             $total["Lunes"] =$qs->total; 
         }
-        elseif ($qs->dias == "4"){
+        elseif ($qs->dias == "3"){
             $total["Martes"] =$qs->total; 
         }
-        elseif ($qs->dias == "5"){
+        elseif ($qs->dias == "4"){
             $total["Miercoles"] =$qs->total; 
         }
-        elseif ($qs->dias == "6"){
+        elseif ($qs->dias == "5"){
             $total["Jueves"] =$qs->total; 
         }
+        elseif ($qs->dias == "6"){
+            $total["Viernes"] =$qs->total; 
+        }
         else{
-            $total["Viernes"] =$qs->total;
+            $total["sabado"] =$qs->total;
         }
                   
     }
