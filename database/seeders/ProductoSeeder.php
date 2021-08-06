@@ -16,7 +16,7 @@ class ProductoSeeder extends Seeder
     {
         $producto = new Producto();
 
-        $producto->id = 1;
+        // $producto->id = 1;
         $producto->nombre = "MINI CAMARA";
         $producto->descripcion = "CAMARA COLOR NEGRO CON VISION NOCTURNA CON 2MP 1080P, WIFI INALÁMBRIC 110 GRADOS, 1 PIEZA";
         $producto->modelo = "PB401";
@@ -30,7 +30,7 @@ class ProductoSeeder extends Seeder
 
         $producto2 = new Producto();
 
-        $producto2->id = 2;
+        // $producto2->id = 2;
         $producto2->nombre = "CAMARA DE SEGURIDAD";
         $producto2->descripcion = "CAMARA 2NFL COLOR BLANCO BULLET 1080P 2MEGAPIXELES 93 GRADOS HDCVI VISION NOCTURNA LEDS IR DAHUA COOPER, CON WIFI, PARA INTERIOR/EXTERIOR";
         $producto2->modelo = "HFW1200TA28";
@@ -44,7 +44,7 @@ class ProductoSeeder extends Seeder
 
         $producto3 = new Producto();
 
-        $producto3->id = 3;
+        // $producto3->id = 3;
         $producto3->nombre = "CAMARA  DE SEGURIDAD";
         $producto3->descripcion = "CAMARA DAHUA DE SEGURIDAD WIFI HD 1080P C/CON ALARMAA IP, VISIÓN NOCTURNA, 360 GRADOS, COLOR BLANCO,PARA INTERIOR/EXTERIOR";
         $producto3->modelo = "Yi Dome X";
@@ -59,7 +59,7 @@ class ProductoSeeder extends Seeder
 
         $producto4 = new Producto();
 
-        $producto4->id = 4;
+        // $producto4->id = 4;
         $producto4->nombre = "CAMARA  DE SEGURIDAD";
         $producto4->descripcion = "CAMARA SMARTLAB DE SEGURIDAD WIFI CON VISION NOCTURNA, FULL HD 1080P LENTE GRAN ANGULAR DE 110 GRADOS PARA INTERIORES";
         $producto4->modelo = "SMARTCAM";
@@ -73,7 +73,7 @@ class ProductoSeeder extends Seeder
 
         $producto5 = new Producto();
 
-        $producto5->id = 5;
+        // $producto5->id = 5;
         $producto5->nombre = "CAMARA ESPIA";
         $producto5->descripcion = "CAMARA IP ESPIA WIFI ALARMA APP CASA HD V380 APP ESPAÑOL,  HD 720P, CONTROLES PAN / TILT: GIRO: 355 GRADOS, INCLINACIÓN: 90 GRADOS, PARA INTERIORES";
         $producto5->modelo = "ONVIF";
@@ -87,7 +87,7 @@ class ProductoSeeder extends Seeder
 
         $producto6 = new Producto();
 
-        $producto6->id = 6;
+        // $producto6->id = 6;
         $producto6->nombre = "CAMARA DE SEGURIDAD";
         $producto6->descripcion = "CAMARA DE SEGURIDAD LIANGYUAN, WIFI EXTERIOR AUTOSEGUIMIENTO 1080P HD CONEXIÓN INALAMBRICA, ROTACIÓN DE 270 GRADOS, PARA INTERIORES/EXTERIORES";
         $producto6->modelo = "DOMO";
@@ -101,7 +101,7 @@ class ProductoSeeder extends Seeder
 
         $producto7 = new Producto();
 
-        $producto7->id = 7;
+        // $producto7->id = 7;
         $producto7->nombre = "CAMARA DE SEGURIDAD";
         $producto7->descripcion = "CÁMARA DE SEGURIDAD LIANGYUAN, WIFI EXTERIOR DE CON ALARMA 1080P 38LED, CONTROLES PAN / TILT: GIRO: 355 GRADOS, INCLINACIÓN: 90 GRADOS, PARA INTERIORES/EXTERIORES";
         $producto7->modelo = "Foscam Tow";
@@ -115,7 +115,7 @@ class ProductoSeeder extends Seeder
 
         $producto8 = new Producto();
 
-        $producto8->id = 8;
+        // $producto8->id = 8;
         $producto8->nombre = "CAMARA";
         $producto8->descripcion = "CAMARA IP MILESING CON VISION NOCTURNA 1080P, AMBIENTE DE USO: INTERIOR Y EXTERIOR, GIRO DE 360 GRADOS, PARA EXTERIORES.";
         $producto8->modelo = "DCS-8515LH";
@@ -129,7 +129,7 @@ class ProductoSeeder extends Seeder
 
         $producto9 = new Producto();
 
-        $producto9->id = 9;
+        // $producto9->id = 9;
         $producto9->nombre = "DVR";
         $producto9->descripcion = "DAHUA COOPER XVR1A04 DVR 4 CANALES HDCVI PENTAHIBRIDO 1080P LITE /H264 1CH IP ADICIONAL SATA HASTA 6TB SMART AUDIO (NO INCLUYE DISCO DURO)";
         $producto9->modelo = "XVR1A04";
@@ -143,7 +143,7 @@ class ProductoSeeder extends Seeder
 
         $producto10 = new Producto();
 
-        $producto10->id = 10;
+        // $producto10->id = 10;
         $producto10->nombre = "DVR";
         $producto10->descripcion = "DVR-EPCOM 8 CANALES 1080P LITE / 8 CANALES TURBOHD + 2 CANALES IP / 1 BAHIA DE DISCO DURO / H.264+ / 1 CANAL DE AUDIO / SALIDA DE VÍDEO FULL HD";
         $producto10->modelo = "S8-TURBO-L";
@@ -157,7 +157,7 @@ class ProductoSeeder extends Seeder
 
         $producto11 = new Producto();
 
-        $producto11->id = 11;
+        // $producto11->id = 11;
         $producto11->nombre = "DVR";
         $producto11->descripcion = "DAHUA DVR 4 CANALES HDMI ,1 DISCO DURO, MAX. 6TB XVR5104HE (NO INCLUYE DISCO DURO)";
         $producto11->modelo = "XVR5104HE-X1";
@@ -171,7 +171,7 @@ class ProductoSeeder extends Seeder
 
         $producto12 = new Producto();
 
-        $producto12->id = 12;
+        // $producto12->id = 12;
         $producto12->nombre = "DVR";
         $producto12->descripcion = "KIT DE GRABACION DAHUA XVR4104CNX1KIT 4CH 1080P HDD DISCO DURO DE 500GB";
         $producto12->modelo = "DH-XVR1A04";
@@ -185,7 +185,7 @@ class ProductoSeeder extends Seeder
 
         $producto13 = new Producto();
 
-        $producto13->id = 13;
+       
         $producto13->nombre = "DVR";
         $producto13->descripcion = "KIT DE GRABACION DAHUA XVR4104CNX1KIT 4CH 1080P HDD DISCO DURO DE 6TB";
         $producto13->modelo = "LC-125";
@@ -199,7 +199,7 @@ class ProductoSeeder extends Seeder
 
         $producto14 = new Producto();
 
-        $producto14->id = 14;
+        
         $producto14->nombre = "DVR";
         $producto14->descripcion = "DAHUA COOPER XVR1A08 - DVR 8 CANALES HDCVI PENTAHIBRIDO 1080, SOPORTA 5 TECNOLOGIAS DIFERENTES: HDCVI /AHD/TVI/CVBS/IP. (NO INCLUYE DISCO DURO)";
         $producto14->modelo = "XVR1A08";
@@ -213,7 +213,7 @@ class ProductoSeeder extends Seeder
 
         $producto15 = new Producto();
 
-        $producto15->id = 15;
+        
         $producto15->nombre = "DVR";
         $producto15->descripcion = "DVR HIKVISION 4 CANALES DVR 1080P LITE 4 CANALES TURBOHD, TECNOLOGIA TURBOHD 1080P LITE VER. 3.0. (NO INCLUYE DISCO DURO)";
         $producto15->modelo = "DS-7104HGHI-F1(S)";
@@ -227,7 +227,7 @@ class ProductoSeeder extends Seeder
 
         $producto16 = new Producto();
 
-        $producto16->id = 16;
+        
         $producto16->nombre = "DVR";
         $producto16->descripcion = "DVR EPCOM 16 CANALES +2IP PENTAHIBRIDO 3 M.P. EV4016TURBO, VERSION 4.0, PERMITE APAGAR CANALES ANALOGICOS TURBOHD Y PODER COLOCAR CAMARAS IP EN TODOS SUS CANALES.  (NO INCLUYE DISCO DURO)";
         $producto16->modelo = "ZOSI";
@@ -241,7 +241,7 @@ class ProductoSeeder extends Seeder
 
         $producto17 = new Producto();
 
-        $producto17->id = 17;
+       
         $producto17->nombre = "DVR";
         $producto17->descripcion = "DVR 1080P LITE DE 16 CANALES TURBOHD + 2 CANALES IP, 1 BAHIA DE DISCO DURO, COMPRESION H.264+, 1 CANAL DE AUDIO Y SALIDA DE VIDEO FULL HD (NO INCLUYE DISCO DURO)";
         $producto17->modelo = "S16 TURBO";
@@ -255,7 +255,7 @@ class ProductoSeeder extends Seeder
 
         $producto18 = new Producto();
 
-        $producto18->id = 18;
+       
         $producto18->nombre = "CABLE SIAMES";
         $producto18->descripcion = "CABLE SIAMES 10 METROS PARA CAMARAS SEGURIDAD CCTV BNC VIDEO, CONECTORES BNC MACHO, CON CONECTORES DE ENERGIA: 1 MACHO Y 1 HEMBRA, PARA INTERIORES/EXTERIORES','CCTV BNC VIDEO";
         $producto18->modelo = "CCTV BNC VIDEO";
@@ -269,7 +269,7 @@ class ProductoSeeder extends Seeder
 
         $producto19 = new Producto();
 
-        $producto19->id = 19;
+       
         $producto19->nombre = "CABLE SIAMES";
         $producto19->descripcion = "CABLE SIAMES 20 METROS PARA CAMARAS SEGURIDAD CCTV BNC VIDEO, CONECTORES BNC MACHO, CON CONECTORES DE ENERGIA: 1 MACHO Y 1 HEMBRA, PARA INTERIORES/EXTERIORES";
         $producto19->modelo = "LC-127";
@@ -283,7 +283,7 @@ class ProductoSeeder extends Seeder
 
         $producto20 = new Producto();
 
-        $producto20->id = 20;
+        
         $producto20->nombre = "CABLE SIAMES";
         $producto20->descripcion = "CABLE SIAMES 30 METROS PARA CAMARAS SEGURIDAD CCTV BNC VIDEO, CONECTORES BNC MACHO, CON CONECTORES DE ENERGIA: 1 MACHO Y 1 HEMBRA, PARA INTERIORES/EXTERIORES.";
         $producto20->modelo = "CCTVFG BNC VIDEO";
@@ -297,7 +297,7 @@ class ProductoSeeder extends Seeder
 
         $producto21 = new Producto();
 
-        $producto21->id = 21;
+        
         $producto21->nombre = "CABLE SIAMES";
         $producto21->descripcion = "CABLE SIAMES 50 METROS PARA CAMARAS SEGURIDAD CCTV BNC VIDEO, CONECTORES BNC MACHO, CON CONECTORES DE ENERGIA: 1 MACHO Y 1 HEMBRA, PARA INTERIORES/EXTERIORES.";
         $producto21->modelo = "CTVZ BNC VIDEO";
@@ -309,7 +309,7 @@ class ProductoSeeder extends Seeder
 
         $producto22 = new Producto();
 
-        $producto22->id = 22;
+       
         $producto22->nombre = "BALUNS TRANSCEPTORES";
         $producto22->descripcion = "4 PARES BALUNS TRANSCEPTORES HD ENERGIA CCTV UTP VIDEO PUSH, COMPATIBLES CON CÁMARAS DE SEGURIDAD CON RESOLUCIÓN DE 960H, 720P, 1080P Y 4MPX, PARA INTERIORES/EXTERIORES";
         $producto22->modelo = "CCTV UTP";
