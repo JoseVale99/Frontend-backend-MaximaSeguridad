@@ -36,7 +36,7 @@ class CreateCitasTable extends Migration
 
         // productos
         Schema::create('product', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('nombre')->nullable(false); 
             $table->text('descripcion');
             $table->string('modelo')->unique();
@@ -44,7 +44,7 @@ class CreateCitasTable extends Migration
             $table->float('precio_c')->nullable(false);
             $table->float('precio_v')->nullable(false);
             $table-> integer('stock');   
-            $table->string('imagen')->nullable();
+            $table->longText('imagen')->default('https://res.cloudinary.com/maximaseguridadapp/image/upload/v1628230965/camaras/default_camara.png');
 
             // $table-> string('');
             // $table -> string('adress');
@@ -77,7 +77,7 @@ class CreateCitasTable extends Migration
 
         Schema::create('pedidos', function (Blueprint $table) {
 
-            $table->id();
+            $table->increments('id');
             $table->unsignedBigInteger('id_cliente')->nullable();
             $table->String('nombre');
             $table->integer('total_venta');
@@ -99,7 +99,7 @@ class CreateCitasTable extends Migration
 
         // citas
         Schema::create('citas', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             //$table->foreignId('id_c')->constrained('users');
             $table->unsignedBigInteger('id_cliente')->nullable();
             $table->string('nombre')->nullable(false); 

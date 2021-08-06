@@ -198,7 +198,7 @@
                                             <label class="text-black h4">Fecha</label>
                                             <input placeholder="Select date" type="date" name="fecha" class="form-control"
                                                  value="{{old('fecha')}}"
-                                                min="2021-07-08" max="2025-12-31">
+                                                min={{date('Y-m-d')}} max="2025-12-31">
                                        
                                                 @error('fecha')
                                                 <div class="message-error">*{{ $message }}</div>

@@ -24,7 +24,7 @@ class ProductoSeeder extends Seeder
         $producto->precio_c = 280.00;
         $producto->precio_v = 346.00;
         $producto->stock = 98;
-        $producto->imagen = "";
+       
 
         $producto->save();
 
@@ -38,7 +38,7 @@ class ProductoSeeder extends Seeder
         $producto2->precio_c = 490;
         $producto2->precio_v = 600;
         $producto2->stock = 69;
-        $producto2->imagen = "";
+       
 
         $producto2->save();
 
@@ -52,7 +52,7 @@ class ProductoSeeder extends Seeder
         $producto3->precio_c = 840;
         $producto3->precio_v = 952;
         $producto3->stock = 82;
-        $producto3->imagen = "";
+       
 
         $producto3->save();
 
@@ -67,7 +67,7 @@ class ProductoSeeder extends Seeder
         $producto4->precio_c = 480;
         $producto4->precio_v = 590;
         $producto4->stock = 89;
-        $producto4->imagen = "";
+        
 
         $producto4->save();
 
@@ -81,7 +81,7 @@ class ProductoSeeder extends Seeder
         $producto5->precio_c = 420;
         $producto5->precio_v = 650;
         $producto5->stock = 78;
-        $producto5->imagen = "";
+        
 
         $producto5->save();
 
@@ -95,7 +95,7 @@ class ProductoSeeder extends Seeder
         $producto6->precio_c = 1000;
         $producto6->precio_v = 1200;
         $producto6->stock = 75;
-        $producto6->imagen = "";
+        
 
         $producto6->save();
 
@@ -109,7 +109,7 @@ class ProductoSeeder extends Seeder
         $producto7->precio_c = 800;
         $producto7->precio_v = 1000;
         $producto7->stock = 86;
-        $producto7->imagen = "";
+        
 
         $producto7->save();
 
@@ -123,7 +123,7 @@ class ProductoSeeder extends Seeder
         $producto8->precio_c = 1500;
         $producto8->precio_v = 1700;
         $producto8->stock = 96;
-        $producto8->imagen = "";
+       
 
         $producto8->save();
 
@@ -137,7 +137,7 @@ class ProductoSeeder extends Seeder
         $producto9->precio_c = 700;
         $producto9->precio_v = 950;
         $producto9->stock = 75;
-        $producto9->imagen = "";
+       
 
         $producto9->save();
 
@@ -151,7 +151,7 @@ class ProductoSeeder extends Seeder
         $producto10->precio_c = 1080;
         $producto10->precio_v = 2000;
         $producto10->stock = 81;
-        $producto10->imagen = "";
+       
 
         $producto10->save();
 
@@ -165,7 +165,7 @@ class ProductoSeeder extends Seeder
         $producto11->precio_c = 700;
         $producto11->precio_v = 950;
         $producto11->stock = 83;
-        $producto11->imagen = "";
+        
 
         $producto11->save();
 
@@ -179,7 +179,7 @@ class ProductoSeeder extends Seeder
         $producto12->precio_c = 850;
         $producto12->precio_v = 1000;
         $producto12->stock = 74;
-        $producto12->imagen = "";
+      
 
         $producto12->save();
 
@@ -193,7 +193,7 @@ class ProductoSeeder extends Seeder
         $producto13->precio_c = 1200;
         $producto13->precio_v = 1500;
         $producto13->stock = 99;
-        $producto13->imagen = "";
+        
 
         $producto13->save();
 
@@ -207,7 +207,7 @@ class ProductoSeeder extends Seeder
         $producto14->precio_c = 750;
         $producto14->precio_v = 999;
         $producto14->stock = 59;
-        $producto14->imagen = "";
+       
 
         $producto14->save();
 
@@ -221,7 +221,7 @@ class ProductoSeeder extends Seeder
         $producto15->precio_c = 770;
         $producto15->precio_v = 990;
         $producto15->stock = 87;
-        $producto15->imagen = "";
+       
 
         $producto15->save();
 
@@ -235,7 +235,7 @@ class ProductoSeeder extends Seeder
         $producto16->precio_c = 1700;
         $producto16->precio_v = 2000;
         $producto16->stock = 66;
-        $producto16->imagen = "";
+       
 
         $producto16->save();
 
@@ -249,7 +249,7 @@ class ProductoSeeder extends Seeder
         $producto17->precio_c = 1500;
         $producto17->precio_v = 1700;
         $producto17->stock = 83;
-        $producto17->imagen = "";
+        
 
         $producto17->save();
 
@@ -263,7 +263,7 @@ class ProductoSeeder extends Seeder
         $producto18->precio_c = 150;
         $producto18->precio_v = 350;
         $producto18->stock = 80;
-        $producto18->imagen = "";
+        
 
         $producto18->save();
 
@@ -277,7 +277,7 @@ class ProductoSeeder extends Seeder
         $producto19->precio_c = 200;
         $producto19->precio_v = 500;
         $producto19->stock = 90;
-        $producto19->imagen = "";
+       
 
         $producto19->save();
 
@@ -291,7 +291,7 @@ class ProductoSeeder extends Seeder
         $producto20->precio_c = 250;
         $producto20->precio_v = 600;
         $producto20->stock = 93;
-        $producto20->imagen = "";
+       
 
         $producto20->save();
 
@@ -305,7 +305,7 @@ class ProductoSeeder extends Seeder
         $producto21->precio_c = 350;
         $producto21->precio_v = 700;
         $producto21->stock = 74;
-        $producto21->imagen = "";
+        
 
         $producto21->save();
 
@@ -319,7 +319,7 @@ class ProductoSeeder extends Seeder
         $producto22->precio_c = 100;
         $producto22->precio_v = 230;
         $producto22->stock = 89;
-        $producto22->imagen = "";
+        
 
         $producto22->save();
 

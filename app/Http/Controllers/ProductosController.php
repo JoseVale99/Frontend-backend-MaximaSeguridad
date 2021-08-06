@@ -82,10 +82,12 @@ class ProductosController extends Controller
         $producto->descripcion = Str::upper($request->input('descripcion'));
         $producto->modelo = Str::upper($request->input('modelo'));
         $producto->tipo = Str::upper($request->input('tipo'));
-        $images = $request->file('imagen')->store('public/images');
-        // $images->move('images',$images);
-        // $url  = Storage::url($images);
-        $producto-> imagen = Storage::url($images);
+        
+        $name_camera= $producto->modelo;
+        $url_camera = $request->file('imagen')->storeOnCloudinaryAs('camaras',$name_camera);
+        $producto-> imagen =$url_camera->getPath();
+      
+        
 
         $producto->saveOrFail();
         return redirect()->route("productos.create");
@@ -171,10 +173,11 @@ class ProductosController extends Controller
             [
                 'imagen' => 'required|image|max:2048'
             ]);
-            $images = $request->file('imagen')->store('public/images');
-            // $images->move('images',$images);
-            // $url  = Storage::url($images);
-            $producto-> imagen = Storage::url($images);
+            $name_camera= $producto->modelo;
+            
+            $url_camera = $request->file('imagen')->storeOnCloudinaryAs(
+                'camaras',$name_camera);
+            $producto-> imagen =$url_camera->getPath();
        
             
         }
