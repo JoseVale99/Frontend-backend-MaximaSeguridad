@@ -206,7 +206,7 @@ class ProductoSeeder extends Seeder
         $producto14->tipo = "8 CANALES";
         $producto14->precio_c = 750;
         $producto14->precio_v = 999;
-        $producto14->stock = 59;
+        $producto14->stock = 159;
        
 
         $producto14->save();
@@ -220,7 +220,7 @@ class ProductoSeeder extends Seeder
         $producto15->tipo = "4 CANALES";
         $producto15->precio_c = 770;
         $producto15->precio_v = 990;
-        $producto15->stock = 87;
+        $producto15->stock = 127;
        
 
         $producto15->save();
@@ -234,13 +234,10 @@ class ProductoSeeder extends Seeder
         $producto16->tipo = "16 CANALES";
         $producto16->precio_c = 1700;
         $producto16->precio_v = 2000;
-        $producto16->stock = 66;
-       
-
+        $producto16->stock = 366;
         $producto16->save();
 
         $producto17 = new Producto();
-
         $producto17->id = 12301467;
         $producto17->nombre = "DVR";
         $producto17->descripcion = "DVR 1080P LITE DE 16 CANALES TURBOHD + 2 CANALES IP, 1 BAHIA DE DISCO DURO, COMPRESION H.264+, 1 CANAL DE AUDIO Y SALIDA DE VIDEO FULL HD (NO INCLUYE DISCO DURO)";
@@ -248,13 +245,12 @@ class ProductoSeeder extends Seeder
         $producto17->tipo = "16 CANALES";
         $producto17->precio_c = 1500;
         $producto17->precio_v = 1700;
-        $producto17->stock = 83;
+        $producto17->stock = 183;
         
 
         $producto17->save();
 
         $producto18 = new Producto();
-
         $producto18->id = 12301468;
         $producto18->nombre = "CABLE SIAMES";
         $producto18->descripcion = "CABLE SIAMES 10 METROS PARA CAMARAS SEGURIDAD CCTV BNC VIDEO, CONECTORES BNC MACHO, CON CONECTORES DE ENERGIA: 1 MACHO Y 1 HEMBRA, PARA INTERIORES/EXTERIORES','CCTV BNC VIDEO";
@@ -262,13 +258,12 @@ class ProductoSeeder extends Seeder
         $producto18->tipo = "P/TRANSMISION DE VIDEO";
         $producto18->precio_c = 150;
         $producto18->precio_v = 350;
-        $producto18->stock = 80;
+        $producto18->stock = 180;
         
 
         $producto18->save();
 
         $producto19 = new Producto();
-
         $producto19->id = 12301469;
         $producto19->nombre = "CABLE SIAMES";
         $producto19->descripcion = "CABLE SIAMES 20 METROS PARA CAMARAS SEGURIDAD CCTV BNC VIDEO, CONECTORES BNC MACHO, CON CONECTORES DE ENERGIA: 1 MACHO Y 1 HEMBRA, PARA INTERIORES/EXTERIORES";
@@ -276,7 +271,7 @@ class ProductoSeeder extends Seeder
         $producto19->tipo = "P/TRANSMISION DE VIDEO";
         $producto19->precio_c = 200;
         $producto19->precio_v = 500;
-        $producto19->stock = 90;
+        $producto19->stock = 190;
        
 
         $producto19->save();
@@ -290,7 +285,7 @@ class ProductoSeeder extends Seeder
         $producto20->tipo = "P/TRANSMISION DE VIDEO";
         $producto20->precio_c = 250;
         $producto20->precio_v = 600;
-        $producto20->stock = 93;
+        $producto20->stock = 193;
        
 
         $producto20->save();
@@ -304,13 +299,10 @@ class ProductoSeeder extends Seeder
         $producto21->tipo = "P/TRANSMISION DE VIDEO";
         $producto21->precio_c = 350;
         $producto21->precio_v = 700;
-        $producto21->stock = 74;
-        
-
+        $producto21->stock = 174;
         $producto21->save();
 
         $producto22 = new Producto();
-
         $producto22->id = 12301472;
         $producto22->nombre = "BALUNS TRANSCEPTORES";
         $producto22->descripcion = "4 PARES BALUNS TRANSCEPTORES HD ENERGIA CCTV UTP VIDEO PUSH, COMPATIBLES CON CÁMARAS DE SEGURIDAD CON RESOLUCIÓN DE 960H, 720P, 1080P Y 4MPX, PARA INTERIORES/EXTERIORES";
@@ -318,7 +310,7 @@ class ProductoSeeder extends Seeder
         $producto22->tipo = "CCTV UTP VIDEO PUSH";
         $producto22->precio_c = 100;
         $producto22->precio_v = 230;
-        $producto22->stock = 89;
+        $producto22->stock = 119;
         
 
         $producto22->save();
