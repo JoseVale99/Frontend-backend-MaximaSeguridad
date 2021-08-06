@@ -33,7 +33,7 @@
                             <div class="row">
                                 <div class="col-md-4 mt-4">
                                     <div class="text-center">
-                                        <img class="img-responsive rounded-circle" src="{{$user->photo}}" width="100px" height="70px" alt="">
+                                        <img class="img-responsive rounded-circle" src="{{$user->photo}}" width="20%" lt="">
 
                                     </div>
                             </div>
