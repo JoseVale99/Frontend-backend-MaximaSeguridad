@@ -36,7 +36,7 @@ class CreateCitasTable extends Migration
 
         // productos
         Schema::create('product', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('nombre')->nullable(false); 
             $table->text('descripcion');
             $table->string('modelo')->unique();
