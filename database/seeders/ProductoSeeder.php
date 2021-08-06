@@ -305,8 +305,6 @@ class ProductoSeeder extends Seeder
         $producto21->precio_c = 350;
         $producto21->precio_v = 700;
         $producto21->stock = 74;
-        
-
         $producto21->save();
 
         $producto22 = new Producto();
@@ -319,8 +317,6 @@ class ProductoSeeder extends Seeder
         $producto22->precio_c = 100;
         $producto22->precio_v = 230;
         $producto22->stock = 89;
-        
-
         $producto22->save();
 
     }
