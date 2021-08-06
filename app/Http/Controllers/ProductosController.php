@@ -31,9 +31,10 @@ class ProductosController extends Controller
     public function index(Request $request)
     {
         $buscar = $request->get('buscarpor');
+
         $tipo = $request->get('type');
         $variablesurl = $request->all();
-        $productos = Producto::buscarpor($tipo, $buscar)->paginate(5)->appends($variablesurl);
+        $productos = Producto::buscarpor($tipo,Str::upper($buscar))->paginate(5)->appends($variablesurl);
         return view('productos.index', compact('productos'));
     }
 
