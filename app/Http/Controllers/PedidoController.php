@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pedido;
 use Session;
+use Illuminate\Support\Str;
 class PedidoController extends Controller
 {
 
