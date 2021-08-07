@@ -35,7 +35,7 @@ class UserController extends Controller
         }
 
         $variablesurl = $request->all();
-        $users = User::buscar($tipo, $buscar)->paginate(5)->appends($variablesurl);
+        $users = User::buscar($tipo, Str::upper($buscar))->paginate(5)->appends($variablesurl);
         return view('usuarios.index', compact('users'));
     }
 

@@ -15,7 +15,7 @@ class PedidoController extends Controller
             $buscar = $request->get('buscar');
             $tipo = $request->get('tipos');
             $variablesurl = $request->all();
-            $pedidos = Pedido::buscar($tipo, $buscar)->paginate(5)->appends($variablesurl);
+            $pedidos = Pedido::buscar($tipo, Str::upper($buscar))->paginate(5)->appends($variablesurl);
             
           
        

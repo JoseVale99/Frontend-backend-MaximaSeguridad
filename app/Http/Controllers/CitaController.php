@@ -15,8 +15,9 @@ class CitaController extends Controller
     {
         $buscar = $request->get('buscar');
         $tipo = $request->get('tipos');
+
         $variablesurl = $request->all();
-        $citas = Cita::buscar($tipo, $buscar)->paginate(5)->appends($variablesurl);
+        $citas = Cita::buscar($tipo, Str::upper($buscar))->paginate(5)->appends($variablesurl);
         return view('Cita.index', compact('citas'));
     }
 
