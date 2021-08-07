@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use App\Models\User;
-use Illuminate\Support\Str;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -36,7 +35,7 @@ class UserController extends Controller
         }
 
         $variablesurl = $request->all();
-        $users = User::buscar($tipo, Str::upper($buscar))->paginate(5)->appends($variablesurl);
+        $users = User::buscar($tipo, $buscar)->paginate(5)->appends($variablesurl);
         return view('usuarios.index', compact('users'));
     }
 
