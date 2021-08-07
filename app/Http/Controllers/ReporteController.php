@@ -13,8 +13,8 @@ class ReporteController extends Controller
 
     function index(){          
 
-        $dias = ['Lunes','Martes', 'Miercoles','Jueves',
-                    'Viernes','Sabado','Domingo'];
+        $dias = ['Lunes','Martes', 'Miércoles','Jueves',
+                    'Viernes','Sábado','Domingo'];
         // foreach ($year as $key => $value) {
         $total_mes = Pedido::select(
             DB::raw('sum(total_venta) as total')
@@ -55,7 +55,7 @@ class ReporteController extends Controller
             $total["Martes"] =$qs->total; 
         }
         elseif ($qs->dias == "4"){
-            $total["Miercoles"] =$qs->total; 
+            $total["Miércoles"] =$qs->total; 
         }
         elseif ($qs->dias == "5"){
             $total["Jueves"] =$qs->total; 
@@ -64,7 +64,7 @@ class ReporteController extends Controller
             $total["Viernes"] =$qs->total; 
         }
         else{
-            $total["sabado"] =$qs->total;
+            $total["Sábado"] =$qs->total;
         }
                   
     }
