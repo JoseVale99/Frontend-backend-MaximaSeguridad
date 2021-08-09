@@ -20,7 +20,7 @@
 
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4 pt-3">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4 pt-5">
                         <h1 class="h3 bold-title text-upper">Dashboard Ventas <i class="fas fa-fw fa-tachometer-alt"></i></h1>
                         <a href="{{route('reporte-pdf')}}" class="btn btn-sm btn-primary shadow-sm"
                             title="descargar reporte"><i class="fas fa-download fa-sm text-white-50 rounded"></i> Generar
