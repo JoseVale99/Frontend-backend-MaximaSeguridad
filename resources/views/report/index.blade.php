@@ -20,17 +20,19 @@
 
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4 pt-3">
+                    {{-- <div class="d-sm-flex align-items-center justify-content-between mb-4 pt-3"> --}}
                         <h1 class="h3 bold-title text-upper">Dashboard Ventas <i class="fas fa-fw fa-tachometer-alt"></i></h1>
-                        <a href="{{route('reporte-pdf')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                            title="descargar reporte"><i class="fas fa-download fa-sm text-white-50 rounded"></i> Generar
-                            Reporte</a>
-                    </div>
+                        
+                    {{-- </div> --}}
 
                     <!-- Content Row -->
                     <div class="row justify-content-center">
-
-                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                        <a href="{{route('reporte-pdf')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                            title="descargar reporte"><i class="fas fa-download fa-sm text-white-50 rounded"></i> Generar
+                            Reporte</a>
+                        </div>
+                            <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
