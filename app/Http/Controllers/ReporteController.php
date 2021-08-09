@@ -45,8 +45,8 @@ class ReporteController extends Controller
        
         $total = [];        
     foreach ($array as $key => $qs) {
-        dd($qs->dias);
-        if ($qs->dias == "Monday"){
+        // dd($qs->dias);
+        if ($qs->dias == "Monday   "){
             $total["Lunes"] =$qs->total; 
         }  
         elseif ($qs->dias == "Tuesday"){
