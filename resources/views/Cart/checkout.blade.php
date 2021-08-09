@@ -98,8 +98,8 @@
                                                 <td class="text-center">{{ $i }}</td>
                                                 <td>
                                                     <div class="text-center">
-                                                    <img src="{{$urlfoto}}" class="image-fluid img-thumbnail rounded"  
-                                                    width="200px" height="200px" alt="camaras de seguridad">
+                                                    <img src="{{$urlfoto}}" class="image-responsive img-thumbnail rounded"  
+                                                    width="40%" alt="camaras de seguridad">
                                                     </div>
                                                 </td>
                                                 <td class="text-center">{{ $item->id }}</td>

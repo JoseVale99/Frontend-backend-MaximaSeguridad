@@ -32,23 +32,22 @@ DB_USERNAME=YOUR USERNAME
 DB_PASSWORD=YOUR PASSWORD
 ```
 ## Actualizar dependecias
-
 ```
- composer update --no-scripts  <- Antes de hacer la migración ejecutar el comando
-
+ composer update ; Descarga las depencias necesarias para ejecutar el sistema. 
 ```
 
-### Migraciones
+### Comandos
 ```bash
-    php artisan migrate
-    php artisan migrate:fresh --seed // actualizar la base de datos y migrar los seeders. 
+   - php artisan migrate -> Migrar las tablas 
+   - php artisan migrate --seed -> Migrar las tablas  y seeders.
+   - php artisan migrate:fresh -> Sí ya antes se migraron las tablas ejecutar este comando para realizar los cambios realizados.
+   - php artisan migrate:fresh  --seed ->  Sí ya antes se migraron las tablas ejecutar este comando para realizar los cambios y enviar los seeders.
+    php artisan storage:link  -> Una vez que se ha almacenado un archivo y se ha creado el enlace simbólico, puede crear una URL a los archivos utilizando el asistente de activos.
 ```
+## Capturas
 
-# Otros comandos de utilidad
 
-``` 
-    php artisan storage:link
-```
+
 
 ## Licencia
-Derechos reservados para la empresa [Sistemas de Maxima seguridad](sistemasdemaximaseguridad@gmail.com).
+Derechos reservados para la empresa [Sistemas de Maxima seguridad](https://maximaseguridad.herokuapp.com/).
