@@ -46,8 +46,9 @@ DB_PASSWORD=YOUR PASSWORD
 ```
 ## Capturas
 
-
-
+<img src="image_1.png" width="80%" >
+<img src="image_2.png" width="80%" >
+<img src="image_3.png" width="80%" >
 
 ## Licencia
 Derechos reservados para la empresa [Sistemas de Maxima seguridad](https://maximaseguridad.herokuapp.com/).
