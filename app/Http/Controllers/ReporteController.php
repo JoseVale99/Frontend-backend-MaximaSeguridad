@@ -13,8 +13,8 @@ class ReporteController extends Controller
 
     function index(){          
 
-        $dias = ['Domingo','Lunes','Martes', 'Miércoles','Jueves',
-                    'Viernes','Sábado'];
+        $dias = ['Lunes','Martes', 'Miércoles','Jueves',
+                    'Viernes','Sábado','Domingo'];
         // foreach ($year as $key => $value) {
         $total_mes = Pedido::select(
             DB::raw('sum(total_venta) as total')
@@ -41,30 +41,30 @@ class ReporteController extends Controller
     )
   ->groupBy('dias')
     ->get();
-    dd($array);
+    // dd($array);
        
         $total = [];        
     foreach ($array as $key => $qs) {
-        if ($qs->dias == "1"){
-            $total["Domingo"] =$qs->total; 
-        }  
-        elseif ($qs->dias == "2"){
+        if ($qs->dias == "Monday"){
             $total["Lunes"] =$qs->total; 
-        }
-        elseif ($qs->dias == "3"){
+        }  
+        elseif ($qs->dias == "Tuesday"){
             $total["Martes"] =$qs->total; 
         }
-        elseif ($qs->dias == "4"){
+        elseif ($qs->dias == "Wednesday"){
             $total["Miércoles"] =$qs->total; 
         }
-        elseif ($qs->dias == "5"){
+        elseif ($qs->dias == "Thursday"){
             $total["Jueves"] =$qs->total; 
         }
-        elseif ($qs->dias == "6"){
+        elseif ($qs->dias == "Friday"){
             $total["Viernes"] =$qs->total; 
         }
+        elseif ($qs->dias == "Saturday"){
+            $total["Sábado"] =$qs->total; 
+        }
         else{
-            $total["Sábado"] =$qs->total;
+            $total["Domingo"] =$qs->total;
         }
                   
     }
