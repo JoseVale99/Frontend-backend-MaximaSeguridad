@@ -49,19 +49,19 @@ class ReporteController extends Controller
         if ($qs->dias == "Monday   "){
             $total["Lunes"] =$qs->total; 
         }  
-        elseif ($qs->dias == "Tuesday"){
+        elseif ($qs->dias === "Tuesday"){
             $total["Martes"] =$qs->total; 
         }
-        elseif ($qs->dias == "Wednesday"){
+        elseif ($qs->dias  ===  "Wednesday"){
             $total["Miércoles"] =$qs->total; 
         }
-        elseif ($qs->dias == "Thursday"){
+        elseif ($qs->dias  ===  "Thursday"){
             $total["Jueves"] =$qs->total; 
         }
-        elseif ($qs->dias == "Friday"){
+        elseif ($qs->dias  ===  "Friday"){
             $total["Viernes"] =$qs->total; 
         }
-        elseif ($qs->dias == "Saturday"){
+        elseif ($qs->dias  ===  "Saturday"){
             $total["Sábado"] =$qs->total; 
         }
         else{
