@@ -41,7 +41,7 @@ class ReporteController extends Controller
     )
   ->groupBy('dias')
     ->get();
-    // dd($array);
+     dd($array);
        
         $total = [];        
     foreach ($array as $key => $qs) {
