@@ -46,22 +46,22 @@ class ReporteController extends Controller
         $total = [];        
     foreach ($array as $key => $qs) {
         // dd($qs->dias);
-        if ($qs->dias == "Monday   "){
+        if ( str_replace(" ","",$qs->dias) == "Monday"){
             $total["Lunes"] =$qs->total; 
         }  
-        elseif ($qs->dias === "Tuesday"){
+        elseif ( str_replace(" ","",$qs->dias) == "Tuesday"){
             $total["Martes"] =$qs->total; 
         }
-        elseif ($qs->dias  ===  "Wednesday"){
+        elseif (str_replace(" ","",$qs->dias) ==  "Wednesday"){
             $total["Miércoles"] =$qs->total; 
         }
-        elseif ($qs->dias  ===  "Thursday"){
+        elseif (str_replace(" ","",$qs->dias) == "Thursday"){
             $total["Jueves"] =$qs->total; 
         }
-        elseif ($qs->dias  ===  "Friday"){
+        elseif (str_replace(" ","",$qs->dias) == "Friday"){
             $total["Viernes"] =$qs->total; 
         }
-        elseif ($qs->dias  ===  "Saturday"){
+        elseif (str_replace(" ","",$qs->dias) ==  "Saturday"){
             $total["Sábado"] =$qs->total; 
         }
         else{
