@@ -41,10 +41,11 @@ class ReporteController extends Controller
     )
   ->groupBy('dias')
     ->get();
-     dd($array);
+    //  dd($array);
        
         $total = [];        
     foreach ($array as $key => $qs) {
+        dd($qs->dias);
         if ($qs->dias == "Monday"){
             $total["Lunes"] =$qs->total; 
         }  
