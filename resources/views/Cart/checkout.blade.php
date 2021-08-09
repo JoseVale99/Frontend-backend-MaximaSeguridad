@@ -99,7 +99,7 @@
                                                 <td>
                                                     <div class="text-center">
                                                     <img src="{{$urlfoto}}" class="image-responsive img-thumbnail rounded"  
-                                                    width="40%" alt="camaras de seguridad">
+                                                    width="20%" alt="camaras de seguridad">
                                                     </div>
                                                 </td>
                                                 <td class="text-center">{{ $item->id }}</td>
