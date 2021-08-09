@@ -65,7 +65,7 @@
                                         style="width: 17rem;">
                                             <img src="{{$producto->imagen}}" 
                                             class="img-responsive card-img rounded"
-                                             width="200px" height="280px"
+                                             width="200px" height="295px"
                                              alt="camaras de seguridad">
                                             <div class="card-body">
                                            
