@@ -13,8 +13,8 @@ class ReporteController extends Controller
 
     function index(){          
 
-        $dias = ['Lunes','Martes', 'Miércoles','Jueves',
-                    'Viernes','Sábado','Domingo'];
+        $dias = ['Domingo','Lunes','Martes', 'Miércoles','Jueves',
+                    'Viernes','Sábado'];
         // foreach ($year as $key => $value) {
         $total_mes = Pedido::select(
             DB::raw('sum(total_venta) as total')
