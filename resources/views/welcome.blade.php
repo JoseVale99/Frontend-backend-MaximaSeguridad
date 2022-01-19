@@ -10,29 +10,33 @@
    
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="1000">
+                <div class="carousel-item active" data-bs-interval="100">
                     <img src="https://cdn.pixabay.com/photo/2018/10/02/21/39/smart-3720021_960_720.jpg"
                         class="img-fluid d-block w-100" alt="">
                 </div>
 
 
-                <div class="carousel-item" data-bs-interval="1000">
+                <div class="carousel-item" data-bs-interval="100">
                     <img src="https://cdn.pixabay.com/photo/2019/08/30/11/01/cctv-4440994_960_720.jpg"
                         class="img-fluid d-block w-100" alt="...">
                 </div>
 
 
-                <div class="carousel-item" data-bs-interval="1000">
+                <div class="carousel-item" data-bs-interval="100">
                     <img src="https://cdn.pixabay.com/photo/2021/03/08/11/35/cctv-6078897_960_720.png"
                         class="img-fluid d-block w-100" alt="...">
                 </div>
 
 
             </div>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
-            </a>
+              </a>
         </div>
 
         <!--========================================================== -->
@@ -141,7 +145,7 @@
 
 </div>
 <footer class="w-100  d-flex  align-items-center justify-content-center flex-wrap">
-  <p class="fs-10 px-3  pt-3 text-dark1">Sistemas de Máxima Seguridad. &copy; Todos Los Derechos Reservados 2021</p>
+  <p class="fs-10 px-3  pt-3 text-dark1">Sistemas de Máxima Seguridad. &copy; Todos Los Derechos Reservados 2022</p>
   <div>
       <a href="https://es-la.facebook.com/pages/category/Home-Security-Company/sistemas-de-maxima-seguridad-199176066820952/"><i class="fab text-primary fa-facebook fa-2x	mx-2"></i></a>
       <a href="#"><i class="fab text-primary fa-twitter fa-2x mx-2	"></i></a>
