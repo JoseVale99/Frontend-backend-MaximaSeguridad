@@ -130,7 +130,7 @@
                                             <div class="col-md-4 mt-4">
                                                 <div class="form-group">
                                                     <label class="text-black h4">Precio compra $</label>
-                                                    <input type="text" name="precio_c" value="{{ old('precio_c') }}"
+                                                    <input type="number" name="precio_c" value="{{ old('precio_c') }}"
                                                         placeholder="Introduce precio del producto 0.0 $"
                                                         class="form-control text-upper">
 
@@ -144,7 +144,7 @@
                                             <div class="col-md-4 mt-4">
                                                 <div class="form-group">
                                                     <label class="text-black h4">Precio venta $</label>
-                                                    <input type="text" name="precio_v" value="{{ old('precio_v') }}"
+                                                    <input type="number" name="precio_v" value="{{ old('precio_v') }}"
                                                         placeholder="Introduce precio del producto 0.0 $"
                                                         class="form-control text-upper">
 
