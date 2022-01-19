@@ -123,14 +123,40 @@
                                                     
                                                     <td>
                                                         @can('pedido.destroy')
+                                                        <button class="btn btn-danger  btn-circle" data-toggle="modal"
+                                                        data-target="#exampleModal{{ $pedido->id }}" type="button">
+                                                        <i class="fa fa-trash"></i></button>
+                                                        <!-- Modal -->
+                                                    <div class="modal fade" id="exampleModal{{ $pedido->id}}" tabindex="-1"
+                                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <form action="{{route('pedido.destroy', $pedido->id)}}"
                                                             method="POST">
                                                             @method("delete")
                                                             @csrf
-                                                            <button title="borrar pedido" type="submit" class="btn btn-outline-danger btn-circle btn-delete">
-                                                                <i class="fa fa-trash"></i>
-                                                            </button>
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                                            Borrar pedido
+                                                                        </h5>
+                                                                        <button type="button" class="close"
+                                                                            data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        ¿Desea eliminar este pedido?
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn btn-danger">Delete
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </form>
+                                                        </div>
                                                         @endcan
                                                     </td>
                                                 </tr>

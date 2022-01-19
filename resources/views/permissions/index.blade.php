@@ -110,15 +110,42 @@
 
                                                     </td>
                                                     <td class="text-center">
+                                                        <button class="btn btn-danger  btn-circle" data-toggle="modal"
+                                                        data-target="#exampleModal{{ $permission->id }}" type="button">
+                                                        <i class="fa fa-trash"></i></button>
+                                                        <!-- Modal -->
+                                                    <div class="modal fade" id="exampleModal{{ $permission->id}}" tabindex="-1"
+                                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <form action="{{ route('permission.destroy', [$permission]) }}" method="post"> 
                                                             @csrf
                                                             @method("delete")
-                                                           
-                                                            <button title="borrar permiso" type="submit" class="btn btn-outline-danger btn-circle btn-delete">
-                                                                <i class="fa fa-trash"></i>
-                                                            </button>
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                                            Borrar permiso
+                                                                        </h5>
+                                                                        <button type="button" class="close"
+                                                                            data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        ¿Desea eliminar este permiso?
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn btn-danger">Delete
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
                                                         </form>
-                                                    </td>
+                                                        </div>
+                                                        </td>
+                                                    
                                                 </tr>
                                                 @empty
                                                 <h3 class="text-black text-center"> ¡No hay registros!</h3>
