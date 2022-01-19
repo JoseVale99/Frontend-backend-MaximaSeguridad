@@ -61,7 +61,7 @@
                                     <div class="col-md-4 mt-4">
                                         <div class="form-group">
                                             <label class="text-black h4">Teléfono</label>
-                                            <input type="text" name="telefono"
+                                            <input type="number" min="0000000000" max="9999999999" name="telefono"
                                                 placeholder="teléfono"
                                                 class="form-control text-upper"
                                                 value="{{old('telefono')}}">
