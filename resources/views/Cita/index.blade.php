@@ -125,14 +125,41 @@
                                                     
                                                     <td>
                                                         @can('cita.destroy')
+                                                        <button class="btn btn-danger  btn-circle" data-toggle="modal"
+                                                        data-target="#exampleModal{{ $cita->id }}" type="button">
+                                                        <i class="fa fa-trash"></i></button>
+                                                        <!-- Modal -->
+                                                    <div class="modal fade" id="exampleModal{{ $cita->id}}" tabindex="-1"
+                                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+
                                                         <form action="{{route('cita.destroy', $cita->id)}}"
                                                             method="POST">
                                                             @method("delete")
                                                             @csrf
-                                                            <button type="submit" class="btn btn-outline-danger btn-circle btn-delete">
-                                                                <i class="fa fa-trash"></i>
-                                                            </button>
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                                            Borrar cita
+                                                                        </h5>
+                                                                        <button type="button" class="close"
+                                                                            data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        ¿Desea eliminar esta cita?
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn btn-danger">Delete
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </form>
+                                                        </div>
                                                         @endcan
                                                     </td>
                                                 </tr>
