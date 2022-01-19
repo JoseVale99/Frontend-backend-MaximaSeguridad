@@ -2,7 +2,7 @@
  <footer class="sticky-footer footer-bg">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
-            <span class=" text-footer">Sistemas de Máxima Seguridad. &copy; Todos Los Derechos Reservados 2021</span>
+            <span class=" text-footer">Sistemas de Máxima Seguridad. &copy; Todos Los Derechos Reservados 2022</span>
         </div>
     </div>
 </footer>
