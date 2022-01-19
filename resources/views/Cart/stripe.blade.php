@@ -64,7 +64,7 @@
                                             <label class="text-black h4">Número de tarjeta</label>
                                             <input autocomplete='off' placeholder="Número de tarjeta" class='form-control' size='20' name="card_no" 
                                             value="{{ old('card_no')}}"
-                                            type='text'>
+                                            type='number'>
 
                                             @error('card_no')
                                                     <div class="message-error">*{{ $message }}</div>
@@ -78,7 +78,7 @@
                                         <div class="form-group">
                                             <label class="text-black h4">CVC</label>
                                             <input autocomplete='off' class='form-control' name="cvv" placeholder='e.g 415'
-                                                size='4' type='password' value="{{old('cvv')}}" >
+                                                 min="3" max="3" type='password' value="{{old('cvv')}}" >
                                             
                                             @error('cvv')
                                                 <div class="message-error">*{{ $message }}</div>
@@ -91,7 +91,7 @@
                                 <div class="col-md-4 mt-4">
                                         <div class="form-group">
                                             <label class="text-black h4">Teléfono</label>
-                                            <input type="text" name="telefono"
+                                            <input type="number" min="0000000000" max="9999999999" name="telefono"
                                                 placeholder="teléfono"
                                                 class="form-control text-upper"
                                                 value="{{old('telefono')}}">
