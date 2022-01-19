@@ -159,16 +159,44 @@
                                                             <i class="fa fa-edit"></i></a>
                                                         @endcan
                                                     </td>
-                                                    <td>
-                                                        @can('productos.destroy')
-                                                        <form action="{{ route('productos.destroy', [$producto]) }}"
+                                                    <td class="text-center">
+                                                        @can('productos.destroy') 
+                                                    <button class="btn btn-danger  btn-circle" data-toggle="modal"
+                                                        data-target="#exampleModal{{ $producto->id }}" type="button">
+                                                        <i class="fa fa-trash"></i></button>
+                                                        <!-- Modal -->
+                                                    <div class="modal fade" id="exampleModal{{ $producto->id}}" tabindex="-1"
+                                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        
+                                                         <form action="{{ route('productos.destroy', [$producto]) }}"
                                                             method="post">
-                                                            @method("delete")
                                                             @csrf
-                                                            <button title="borrar producto" type="submit" class="btn btn-outline-danger btn-circle btn-delete">
-                                                                <i class="fa fa-trash"></i>
-                                                            </button>
+                                                            @method("delete")
+                                                           
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="exampleModalLabel">
+                                                                            Borrar producto
+                                                                        </h5>
+                                                                        <button type="button" class="close"
+                                                                            data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        ¿Desea eliminar este producto?
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn btn-danger">Delete
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </form> 
+                                                        </div>
                                                         @endcan
                                                     </td>
                                                 </tr>
