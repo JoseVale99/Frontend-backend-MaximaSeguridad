@@ -7,10 +7,11 @@ use Cart;
 use Illuminate\Http\Request;
 use Session;
 use App\Models\Pedido;
-use App\Models\User;
+use App\Models\Venta;
 use Stripe\Stripe;
 use Stripe\Charge;
 use Carbon\Carbon;
+
 use PDF;
 use DB;
 
@@ -27,6 +28,8 @@ class CarritoController extends Controller
         $productos = Producto::buscarpor($tipo, $buscar)->paginate(6)->appends($variablesurl);
         return view('Cart.Carrito', compact('productos'));
     }
+
+    //  agregamos al carrito
     public function add(Request $request)
     {
         $producto = Producto::find($request->producto_id);
@@ -36,7 +39,7 @@ class CarritoController extends Controller
 
 
 
-            Cart::add(
+           Cart::add(
                 $producto->id,
                 $producto->nombre,
                 $producto->precio_v,
@@ -44,6 +47,9 @@ class CarritoController extends Controller
                 // cantidad de producto
                 array('imagen' => $producto->imagen)
             );
+
+            
+
             Session::flash('message_save', "¡ $producto->nombre se ha agregado al carrito!");
 
             return back();
@@ -87,6 +93,7 @@ class CarritoController extends Controller
     }
     public function stripe()
     {
+        //  dd(Cart::getContent());
         return view('Cart.stripe');
     }
 
@@ -123,42 +130,62 @@ class CarritoController extends Controller
                 'card' => $response['id'],
                 'currency' => 'MXN',
                 'amount' => 100 * (Cart::getSubTotal() * .9),
-                'description' => 'compra de camaras',
+                'description' => 'compra de cámaras',
             ]);
+
+           
 
             if ($charge['status'] == 'succeeded') {
                 // alta pedidos
-                $producto = new Producto();
+                
 
-                $pedidos = new Pedido($request->all());
+                // instancias de las clases Pedidos y Ventas
+               
+                $venta = new Venta();
 
-                $pedidos->id_cliente = auth()->user()->id;
-                $pedidos->nombre = $request->input('nombre');
-                $pedidos->total_venta =  (int) (Cart::getSubTotal() * .9);
+                //  asignar id al cliente 
+                $venta->id_cliente = auth()->user()->id;
+                $venta->nombre = $request->input('nombre');
+                $venta->telefono = $request->input('telefono');;
+                $venta->direccion = $request->input('direccion');
+                $venta->total =  (Cart::getSubTotal() * .9);
+                $venta->saveOrFail();
+                $idVenta = $venta->id;
 
 
-
-
-                $cadena = "";
+                // $cadena = "";
                 foreach (Cart::getContent() as $item) {
+                    $pedido = new Pedido();
                     $producto = Producto::find($item->id);
 
-                    $cadena =  $cadena . "- Cantidad: " . $item->quantity . ",  Nombre: " . $producto->nombre . "\n";
-
+                    // $cadena =  $cadena . "- Cantidad: " . $item->quantity . ",  Nombre: " . $producto->nombre . "\n";
+                   
+                   
+                    $pedido->fill([
+                        "id_venta" => $idVenta,
+                        "nombre_producto" => $producto->nombre,
+                        "precio" => $item->price,
+                        "cantidad" => $item->quantity,
+                        "subtotal" => strval((int)($item->price) * (int)($item->quantity))
+        ]);
 
                     $producto->stock = $producto->stock - $item->quantity;
 
                     $producto->saveOrFail();
+                    $pedido->saveOrFail();
                 }
 
-                $pedidos->productos = $cadena;
-                $pedidos->direccion = $request->input('direccion');
-                $pedidos->telefono = $request->input('telefono');
-                $pedidos->fecha = Carbon::now();
-                $pedidos->saveOrFail();
+                // $pedidos->productos = $cadena;
+             
+               
+                
+                
 
                 Session::flash('compra_sucess', "¡Su compra se realizó con exito!");
                 Cart::clear();
+
+                // $ped = Pedido::all();
+                // dd($ped);
                 return redirect()->route('cart.invoices');
             } else {
                 Session::flash('compra_sucess', "algo salió mal.");
@@ -173,15 +200,12 @@ class CarritoController extends Controller
 
     public function invoices(Request $request)
     {
-
-       
-
         
         if (auth()->user()->id == 2) {
-            $invoices =  DB::table('pedidos')->paginate(5);
+            $invoices =  Venta::paginate(5);
             return view('Cart.invoices', compact('invoices'));
         } else {          
-            $invoices = Pedido::where('id_cliente', '=',auth()->user()->id)->paginate(5);
+            $invoices = Venta::where('id_cliente', '=',auth()->user()->id)->paginate(5);
         
             return view('Cart.invoices', compact('invoices'));
         }
@@ -190,11 +214,12 @@ class CarritoController extends Controller
     public function createPDF($id)
     {
         // retreive all records from db
-        $pedidos = Pedido::findOrFail($id);
+        // $pedidos = Venta::findOrFail($id);
 
-        if (auth()->user()->id == 2) {
+        if ( auth()->user()->id == 2) {
 
-            $invoices = DB::table('pedidos')->where('id', '=', $id)
+            $invoices = Pedido::where('id_venta','=',$id)
+            ->join('ventas','ventas.id','=', 'pedidos.id_venta')
                 ->get();
 
             // share data to view
@@ -202,18 +227,28 @@ class CarritoController extends Controller
             $pdf = PDF::loadView('Cart.invoices-pdf', ['invoices' => $invoices]);
         } else {
 
+               
+            
+                $invoices = Venta::where('id_cliente', '=', auth()->user()->id)
+                ->join('pedidos','ventas.id','=', 'pedidos.id_venta')
+                ->get();
 
-            $invoices = DB::table('pedidos')->where('id_cliente', '=',auth()->user()->id)
-            ->where('id', "=",$id)   
-            ->get();
+            
+                
+            //     DB::table('pedidos')->where('id_cliente', '=',auth()->user()->id)
+            // ->where('id', "=",$id)   
+            // ->get();
 
             // share data to view
             view()->share('Cart.invoices-pdf', $invoices);
             $pdf = PDF::loadView('Cart.invoices-pdf', ['invoices' => $invoices]);
-        }
+
+             }
+            return $pdf->download('nota_de_pago.pdf');
+        
 
 
         // download PDF file with download method
-        return $pdf->download('nota_de_pago.pdf');
+       
     }
 }
