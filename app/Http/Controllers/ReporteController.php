@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\User;
 use App\Models\Pedido;
+use App\Models\Venta;
 use DB;
 use PDF;
 class ReporteController extends Controller
@@ -16,26 +15,26 @@ class ReporteController extends Controller
         $dias = ['Lunes','Martes', 'Miércoles','Jueves',
                     'Viernes','Sábado','Domingo'];
         // foreach ($year as $key => $value) {
-        $total_mes = Pedido::select(
-            DB::raw('sum(total_venta) as total')
+        $total_mes = Venta::select(
+            DB::raw('sum(total) as total')
             
         )
-        ->whereMonth('fecha', '=', date('m'))
+        ->whereMonth('created_at', '=', date('m'))
             // ->groupBy('months')
             ->get();
 
-        $total_anio = DB::table('pedidos')
+        $total_anio = DB::table('ventas')
         ->select(
-            DB::raw('sum(total_venta) as total')
+            DB::raw('sum(total) as total')
           
             )
-            ->whereYear('fecha', '=', date('Y'))
+            ->whereYear('created_at', '=', date('Y'))
         // ->groupBy('mes')
         ->get();
 
-            $array=DB::table('pedidos')
-            ->select(DB::raw('SUM(pedidos.total_venta) as total'),
-            DB::raw("to_char(pedidos.fecha, 'Day') as dias")
+            $array=DB::table('ventas')
+            ->select(DB::raw('SUM(ventas.total) as total'),
+            DB::raw("to_char(ventas.created_at, 'Day') as dias")
     // DB::raw('DAYNAME(pedidos.fecha) as dias')
     
     )
@@ -80,11 +79,11 @@ class ReporteController extends Controller
     
 
 
-            $reportes =  DB::table('pedidos')
+            $reportes =  DB::table('ventas')
             ->select(
-                DB::raw('sum(total_venta) as total'),
+                DB::raw('sum(total) as total'),
                 // DB::raw("DATE_FORMAT(fecha,'%d - %b - %Y') as fecha") //Mysql
-                DB::raw("to_char(fecha,'yyyy-mm-dd') as fecha") //pgsql
+                DB::raw("to_char(created_at,'yyyy-mm-dd') as fecha") //pgsql
             )
             ->groupBy('fecha')
             ->get();
