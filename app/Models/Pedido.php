@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Venta;
 class Pedido extends Model
 {
    
@@ -12,16 +13,18 @@ class Pedido extends Model
     // protected $dates = ['deleted_at']; //Registramos la nueva columna
     protected $table = 'pedidos';
     protected $primarykey = 'id';
-    public $timestamps = false;
+    // public $timestamps = false;
     
-    protected $fillable =[
-        'nombre',
-        'total_venta',
-        'productos',
-        'direccion',
-        'telefono',
-        'fecha'    
-    ];
+
+    protected $guarded = [];
+    // protected $fillable =[
+    //     'nombre',
+    //     'total_venta',
+    //     'productos',
+    //     'direccion',
+    //     'telefono',
+    //     'fecha'    
+    // ];
 
       // función para la búsqueda de citas
       public function scopeBuscar($query, $tipo, $buscar) {
@@ -33,7 +36,7 @@ class Pedido extends Model
 
 
 // Relacion uno a muchos (inversa)
-public function user(){
-    return $this->belongTO('App\Models\User');
+public function venta(){
+    return $this->belongsTo(Venta::class,'id_venta');
 }
 }
