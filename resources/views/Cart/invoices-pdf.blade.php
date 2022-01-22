@@ -50,57 +50,67 @@
                 <table class="table table-condensed table-bordered table-striped">
                     <thead class="thead-dark">
                         <tr>
-                            <th>DESCRIPCIÓN / CANTIDAD</th>
+                            <th>NOMBRE DEL PRODUCTO</th>
+                            <th>CANTIDAD</th>
+                            <th>PRECIO</th>
+                            <th>SUBTOTOTAL</th>
                             <th>DIRECCIÓN</th>
-                            <th>TELÉFONO</th>
-                            <th>TOTAL</th>
+
+                            {{-- <th>TOTAL</th> --}}
                         </tr>
                     </thead>
-                    <tbody><tfoot>
+                    <tbody>
                         @foreach ($invoices as $invoice)
                         <tr class="table-bordered">
                             
-                        <td  class="text-left">{{ $invoice->productos }}</td>
-                           <td  class="text-left">{{ $invoice->direccion }}</td>
-                           <td>{{ $invoice->telefono }}</td>
-                            <td  class="text-left">{{$invoice->total_venta }} MXN</td>
+                        <td  class="text-left">{{ $invoice->nombre_producto }}</td>
+                           <td  class="text-left">{{ $invoice->cantidad }}</td>
+                            <td  class="text-left">{{ $invoice->precio }}</td>
+                                <td  class="text-left">{{ $invoice->subtotal }}</td>
+                                    <td>{{ $invoice->direccion }}</td>
+                         
+                            {{-- <td  class="text-left">{{$invoice->total }} MXN</td> --}}
                             
-                           
+                            @endforeach
                            
                             </tr>
                            
                             <tr>
-                                <td colspan="3" class="text-right">
+                                <td colspan="4" class="text-right">
                                   <h5>Cliente</h5>
                               </td>   
                                 <td  class="text-right">
-                                  {{$invoice->nombre }}
+                                  {{$invoices[0]->nombre }}
                               </td>
                           
                           </tr>
                           <tr>
-                            <td colspan="3" class="text-right">
-                              <h5>Fecha</h5>
+                            <td colspan="4" class="text-right">
+                              <h5>Tel:</h5>
                           </td>   
                             <td  class="text-right">
-                              {{$invoice->fecha }}
+                              {{$invoices[0]->telefono }}}
+                          </td>
+                      
+                      </tr>
+                          <tr>
+                            <td colspan="4" class="text-right">
+                              <h5>Fecha: </h5>
+                          </td>   
+                            <td  class="text-right">
+                              {{ date('d-m-y', strtotime($invoice->created_at)) }}
                           </td>
                       
                       </tr>
                              <tr>
-                                <td colspan="3" class="text-right">
-                                  <h5>TOTAL</h5>
+                                <td colspan="4" class="text-right">
+                                  <h5>IMPORTE :</h5>
                               </td> 
                              <td  class="text-right">
-                                      <h5> $ {{$invoice->total_venta }} MXN</h5>
+                                      <h5> $ {{$invoices[0]->total }} MXN</h5>
                                   </td>
                               </tr>
                               
-
-                            </tfoot>
-                       
-                       
-                 @endforeach
                 </tbody>
             
                 </table>
