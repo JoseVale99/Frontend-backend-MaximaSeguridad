@@ -89,7 +89,7 @@
                               <h5>Tel:</h5>
                           </td>   
                             <td  class="text-right">
-                              {{$invoices[0]->telefono }}}
+                              {{$invoices[0]->telefono }}
                           </td>
                       
                       </tr>
