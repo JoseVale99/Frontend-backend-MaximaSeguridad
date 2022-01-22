@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pedido;
+use App\Models\Venta;
 use Session;
 use Illuminate\Support\Str;
 class PedidoController extends Controller
@@ -16,7 +17,7 @@ class PedidoController extends Controller
             $buscar = $request->get('buscar');
             $tipo = $request->get('tipos');
             $variablesurl = $request->all();
-            $pedidos = Pedido::buscar($tipo, Str::upper($buscar))->paginate(5)->appends($variablesurl);
+            $pedidos = Venta::buscar($tipo, Str::upper($buscar))->paginate(5)->appends($variablesurl);
             
           
        
