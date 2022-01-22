@@ -72,35 +72,49 @@ class CreateCitasTable extends Migration
         });
         
 
-
-        // pedidos 
-
-        Schema::create('pedidos', function (Blueprint $table) {
-
-            $table->increments('id');
+        Schema::create('ventas', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('id_cliente')->nullable();
-            $table->String('nombre');
-            $table->integer('total_venta');
-            $table->text('productos');
-            $table->string('direccion');
-            $table->String('telefono');
-
-            $table->date('fecha');
+            $table->text('nombre');
+            $table->string('telefono');
+            $table->text('total');
+            $table->timestamps();
+            
+            
             $table->foreign('id_cliente')
             ->references('id')->on('users') 
             ->onDelete('cascade');
 
-            // $table->rememberToken();
-            // $table->timestamps();
             $table->softDeletes();
-         } );
 
+            
+        } );
+        // ventas
+
+         Schema::create('pedidos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedBigInteger('id_venta')->nullable();
+            $table->String('nombre_producto');
+            $table->string('precio');
+            $table->string('cantidad');
+            $table->string('subtotal');
+            $table->timestamps();
+
+           $table->foreign('id_venta')
+            ->references('id')->on('ventas') 
+            ->onDelete('cascade');
+
+            $table->softDeletes();
+        });
+
+          // pedidos
+         
+          
 
 
         // citas
         Schema::create('citas', function (Blueprint $table) {
             $table->increments('id');
-            //$table->foreignId('id_c')->constrained('users');
             $table->unsignedBigInteger('id_cliente')->nullable();
             $table->string('nombre')->nullable(false); 
             $table->String('telefono');
@@ -114,14 +128,14 @@ class CreateCitasTable extends Migration
             $table->foreign('id_cliente')
             ->references('id')->on('users') 
             ->onDelete('cascade');
-
-            // $table->rememberToken();
-            // $table->timestamps();
              $table->softDeletes();
 
 
             
         });
+
+      
+
     }
 
     /**
@@ -139,6 +153,9 @@ class CreateCitasTable extends Migration
         Schema::dropIfExists('failed_jobs');
         Schema::dropIfExists('password_resets');
         Schema::dropIfExists('citas');
+        Schema::dropIfExists('ventas');
         Schema::dropIfExists('pedidos');
+       
+        
     }
 }
