@@ -77,6 +77,7 @@ class CreateCitasTable extends Migration
             $table->unsignedBigInteger('id_cliente')->nullable();
             $table->text('nombre');
             $table->string('telefono');
+            $table->text('direccion');
             $table->text('total');
             $table->timestamps();
             
