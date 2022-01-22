@@ -48,7 +48,7 @@
                                                 <th scope="col">ID CLIENTE</th>
                                                 <th scope="col">NOMBRE CLIENTE</th>
                                                 <th scope="col">TOTAL VENTA</th>
-                                                <th scope="col">PRODUCTOS</th>
+                                                {{-- <th scope="col">PRODUCTOS</th> --}}
                                                 <th scope="col">DIRECCIÓN</th>
                                                 <th scope="col">TELÉFONO</th>
                                                 <th scope="col">FECHA</th>
@@ -62,15 +62,15 @@
                                                     <th scope="row">{{ $invoice->id}}</th>
                                                     <th scope="row">{{ $invoice->id_cliente}}</th>
                                                     <td>
-                                                            {{ $invoice->nombre }}
+                                                            {{ $invoice->user->name}}
                                                         
                                                     </td>
 
-                                                    <td class="text-center">$ {{$invoice->total_venta }} MXN</td>
-                                                    <td class="text-justify">{{ $invoice->productos }}</td>
+                                                    <td class="text-center">$ {{$invoice->total }} MXN</td>
+                                                    {{-- <td class="text-justify">{{ $invoice->productos }}</td> --}}
                                                     <td class="text-center">{{ $invoice->direccion }}</td>
                                                     <td class="text-center">{{ $invoice->telefono }}</td>
-                                                    <td class="text-center">{{ $invoice->fecha}}</td>
+                                                    <td class="text-center">{{ $invoice->created_at}}</td>
                                                 
                                                     
                                                     <td class="text-center">
