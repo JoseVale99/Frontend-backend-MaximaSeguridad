@@ -44,10 +44,9 @@
                                             <div class="form-group">
                                                 @php($arrayB = [
                                                     'nombre',
-                                                    'productos',
+                                                    'total',
                                                     'direccion',
-                                                    'telefono',
-                                                    'fecha'
+                                                    'telefono'
                                                     // 'PRECIO COMPRA','PRECIO VENTA'
                                                     ])
                                                     <select title="buscar por" class="form-control text-upper" name="tipos">
@@ -110,15 +109,15 @@
                                                         {{-- <a class="text-center"
                                                             href="{{ route('productos.show', [$producto]) }}"> --}}
 
-                                                            {{ $pedido->nombre }}
+                                                            {{ $pedido->user->name }}
                                                         {{-- </a> --}}
                                                     </td>
 
-                                                    <td class="text-center">$ {{$pedido->total_venta }} MXN</td>
-                                                    <td class="text-justify">{{ $pedido->productos }}</td>
+                                                    <td class="text-center">$ {{$pedido->total }} MXN</td>
+                                                    <td class="text-justify">{{ $pedido->pedidos->nombre_producto }} ...</td>
                                                     <td class="text-center">{{ $pedido->direccion }}</td>
                                                     <td class="text-center">{{ $pedido->telefono }}</td>
-                                                    <td class="text-center">{{ $pedido->fecha}}</td>
+                                                    <td class="text-center">{{ date('d/m/y', strtotime($pedido->pedidos->created_at)) }}</td>
                                                     
                                                     
                                                     <td>
