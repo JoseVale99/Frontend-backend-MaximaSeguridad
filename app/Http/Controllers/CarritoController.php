@@ -148,7 +148,7 @@ class CarritoController extends Controller
                 $venta->nombre = $request->input('nombre');
                 $venta->telefono = $request->input('telefono');;
                 $venta->direccion = $request->input('direccion');
-                $venta->total =  (Cart::getSubTotal() * .9);
+                $venta->total =  (int) (Cart::getSubTotal() * .9);
                 $venta->saveOrFail();
                 $idVenta = $venta->id;
 

@@ -78,7 +78,7 @@ class CreateCitasTable extends Migration
             $table->text('nombre');
             $table->string('telefono');
             $table->text('direccion');
-            $table->text('total');
+            $table->integer('total');
             $table->timestamps();
             
             
