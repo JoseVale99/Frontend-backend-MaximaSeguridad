@@ -10,10 +10,8 @@ use App\Models\Pedido;
 use App\Models\Venta;
 use Stripe\Stripe;
 use Stripe\Charge;
-use Carbon\Carbon;
-
 use PDF;
-use DB;
+
 
 class CarritoController extends Controller
 {
@@ -48,7 +46,7 @@ class CarritoController extends Controller
                 array('imagen' => $producto->imagen)
             );
 
-            
+
 
             Session::flash('message_save', "¡ $producto->nombre se ha agregado al carrito!");
 
@@ -133,17 +131,17 @@ class CarritoController extends Controller
                 'description' => 'compra de cámaras',
             ]);
 
-           
+
 
             if ($charge['status'] == 'succeeded') {
                 // alta pedidos
-                
+
 
                 // instancias de las clases Pedidos y Ventas
-               
+
                 $venta = new Venta();
 
-                //  asignar id al cliente 
+                //  asignar id al cliente
                 $venta->id_cliente = auth()->user()->id;
                 $venta->nombre = $request->input('nombre');
                 $venta->telefono = $request->input('telefono');;
@@ -159,8 +157,8 @@ class CarritoController extends Controller
                     $producto = Producto::find($item->id);
 
                     // $cadena =  $cadena . "- Cantidad: " . $item->quantity . ",  Nombre: " . $producto->nombre . "\n";
-                   
-                   
+
+
                     $pedido->fill([
                         "id_venta" => $idVenta,
                         "nombre_producto" => $producto->nombre,
@@ -176,10 +174,10 @@ class CarritoController extends Controller
                 }
 
                 // $pedidos->productos = $cadena;
-             
-               
-                
-                
+
+
+
+
 
                 Session::flash('compra_sucess', "¡Su compra se realizó con exito!");
                 Cart::clear();
@@ -200,13 +198,13 @@ class CarritoController extends Controller
 
     public function invoices(Request $request)
     {
-        
+
         if (auth()->user()->id == 2) {
             $invoices =  Venta::paginate(5);
             return view('Cart.invoices', compact('invoices'));
-        } else {          
+        } else {
             $invoices = Venta::where('id_cliente', '=',auth()->user()->id)->paginate(5);
-        
+
             return view('Cart.invoices', compact('invoices'));
         }
     }
@@ -227,16 +225,17 @@ class CarritoController extends Controller
             $pdf = PDF::loadView('Cart.invoices-pdf', ['invoices' => $invoices]);
         } else {
 
-               
-            
-                $invoices = Venta::where('id_cliente', '=', auth()->user()->id)
-                ->join('pedidos','ventas.id','=', 'pedidos.id_venta')
-                ->get();
 
-            
-                
+
+            $invoices = Venta::where('id_cliente', '=', auth()->user()->id)
+            ->join('pedidos','ventas.id','=', 'pedidos.id_venta')
+            ->where('id_venta','=',$id)
+            ->get();
+
+
+
             //     DB::table('pedidos')->where('id_cliente', '=',auth()->user()->id)
-            // ->where('id', "=",$id)   
+            // ->where('id', "=",$id)
             // ->get();
 
             // share data to view
@@ -245,10 +244,10 @@ class CarritoController extends Controller
 
              }
             return $pdf->download('nota_de_pago.pdf');
-        
+
 
 
         // download PDF file with download method
-       
+
     }
 }
